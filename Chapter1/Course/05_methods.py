@@ -6,6 +6,9 @@ class Student:
         self.name = name
         self.age = age
 
+    # Les adresses mémoire ne sont pas très utile, et nous pouvons
+    # contrôler le comportement des conversions de classes en chaînes de caractères
+    # en utilisant la méthode __str__.
     def __str__(self):
         return f"name = {self.name}, age = {self.age}"
 
