@@ -21,6 +21,13 @@ class RemoteControl:
     def control(self):
         print("Infrared remote control opening.")
 
-class MyPhone(Phone, NFCReader, RemoteControl):
+# Les classes pères multiples dont les membres portent le même nom sont prioritaires
+# par défaut dans l'ordre de l'héritage (de gauche à droite)
+class MyPhone(NFCReader, Phone ,RemoteControl):
     pass
 
+
+my_phone = MyPhone()
+my_phone.call_by_5g()
+my_phone.control()
+print(my_phone.producer)
